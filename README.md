@@ -22,13 +22,13 @@ The make command will create a the ./bootloadHID. This will be later used to fla
 ## Build applicaion code:
 - Now build you app source either using following commands or can use Makeile with this project
 	- avr-gcc -g -Os -DF_CPU=12000000 -mmcu=atmega8 -c demo.c
-	
-	Here, it is tested on atmel atmega8 mcu, frequency = 12Mhz. You can test it for other mcu's too.
 	- avr-gcc -g -mmcu=atmega8 -o demo.elf demo.o
 	- avr-objcopy -j .text -j .data -O ihex demo.elf demo.hex
 
+> Here, it is tested on atmel atmega8 mcu with frequency = 12Mhz. You can test it for other mcu's too.
+
 ## Flash application code:
-- Copy the bootloadHID bin created after that and paste it into your project folder.
+Copy the bootloadHID bin created after that and paste it into your project folder.
 	
 If applicaion is build using above commands then use command:
 - sudo ./bootloadHID demo.hex
