@@ -20,7 +20,7 @@ utility is required, which needs to be build and using that atmel controllers ca
 The make command will create a the ./bootloadHID. This will be later used to flash.
 
 ## Build applicaion code:
-- Now build you app source either using following commands or can use Makeile with this project
+- Now build you app source either using following commands or can use Makefile provided with this project
 	- avr-gcc -g -Os -DF_CPU=12000000 -mmcu=atmega8 -c demo.c
 	- avr-gcc -g -mmcu=atmega8 -o demo.elf demo.o
 	- avr-objcopy -j .text -j .data -O ihex demo.elf demo.hex
