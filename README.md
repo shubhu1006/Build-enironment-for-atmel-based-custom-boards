@@ -20,7 +20,6 @@ utility is required, which needs to be build and using that atmel controllers ca
 The make command will create a the ./bootloadHID. This will be later used to flash.
 
 ## Build applicaion code:
-- Copy the bootloadHID bin created after that and paste it into your project folder.
 - Now build you app source either using following commands or can use Makeile with this project
 	- avr-gcc -g -Os -DF_CPU=12000000 -mmcu=atmega8 -c demo.c
 	
@@ -28,11 +27,14 @@ The make command will create a the ./bootloadHID. This will be later used to fla
 	- avr-gcc -g -mmcu=atmega8 -o demo.elf demo.o
 	- avr-objcopy -j .text -j .data -O ihex demo.elf demo.hex
 
-## Flash applicaion code:
-	If applicaion is build using above commands then use command:
-	- sudo ./bootloadHID demo.hex
-	If application is build using Makefile provided with this project then use command:
-	- make program
+## Flash application code:
+- Copy the bootloadHID bin created after that and paste it into your project folder.
+	
+If applicaion is build using above commands then use command:
+- sudo ./bootloadHID demo.hex
+
+If application is build using Makefile provided with this project then use command:
+- make program
 
 ## References
 https://blog.akendo.eu/post/how_to_flash_an_atmega8/
