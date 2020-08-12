@@ -28,7 +28,7 @@ The make command will create a the ./bootloadHID. This will be later used to fla
 > Here, it is tested on atmel atmega8 mcu with frequency = 12Mhz. You can test it for other mcu's too.
 
 ## Flash application code:
-Copy the bootloadHID bin created after that and paste it into your project folder.
+Copy the bootloadHID bin created and paste it into your project folder.
 	
 If applicaion is build using above commands then use command:
 - sudo ./bootloadHID demo.hex
