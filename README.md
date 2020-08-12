@@ -37,7 +37,8 @@ If application is build using Makefile provided with this project then use comma
 - make program
 
 ## References
-https://blog.akendo.eu/post/how_to_flash_an_atmega8/
+https://blog.akendo.eu/post/how_to_flash_an_atmega8
+
 https://github.com/robertgzr/bootloadHID
 
 ## Contact
