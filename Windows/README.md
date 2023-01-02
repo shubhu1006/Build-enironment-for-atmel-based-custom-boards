@@ -3,8 +3,8 @@ Windows Build environment for atmel based custom boards having on board programm
 
 ## Insall necessay softwares
 User needs to install WinAVR (https://sourceforge.net/projects/winavr/files/) and add paths in environment variable:
-\WinAVR-<*version*>\bin
-WinAVR-<*version*>\utils\bin
+- \WinAVR-<*version*>\bin
+- \WinAVR-<*version*>\utils\bin
 
 > replace **version** with installed version
 ## Build applicaion code:
