@@ -17,7 +17,7 @@ For linux, we are using BootloadHID utility, which needs to be build and using t
 > make requires VENDORID and PRODUCTID to identify the device. This information can be extract from the datasheet of the chip. Without this parameter, the compiler will produce wrong code that most likely not work on the chip. 
 > In the above make command for our project got these values from somewhere (from a guy) not from the datasheet.
 
-The make command will create the 'bootloadHID' app. This will be later used to flash.
+The make command will create the **bootloadHID** app. This will be later used to flash.
 
 ## Build applicaion code:
 - User can build app either using following commands or use Makefile provided with this project
@@ -31,7 +31,7 @@ The make command will create the 'bootloadHID' app. This will be later used to f
 Copy the bootloadHID bin created and paste it into your project folder.
 	
 If applicaion is build using above commands then use command:
-- sudo ./bootloadHID <application_hex >demo.hex
+- sudo ./bootloadHID <*application_hex*>
 > example: sudo ./bootloadHID demo.hex 
 
 If application is build using Makefile provided with this project then use command:
