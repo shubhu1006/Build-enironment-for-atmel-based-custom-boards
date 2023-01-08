@@ -1,9 +1,8 @@
 # Linux-build-enironment-for-atmel-based-custom-boards
 Build and flash environment for atmel based custom boards having on board programmer.
 
-There are many custom boards using atmel series controllers having on board programmer,
-they can be programmed in windows easly using HIDBootflash software. But for linux, BootloadHID 
-utility is required, which needs to be build and using that atmel controllers can be flash.
+There are many custom boards using atmel series controllers having on board programmer, flashing the code from linux environment is bit tricky. So this will help you in flashing atmel controllers on linux development environment.
+For linux, we are using BootloadHID utility, which needs to be build and using that atmel controllers can be flash.
 
 ## Insall necessay softwares
 - sudo apt-get install gcc-avr avr-libc avrdude binutils 
@@ -15,12 +14,13 @@ utility is required, which needs to be build and using that atmel controllers ca
 - cd commandline/
 - make VENDORID=0x16c0 PRODUCTID=0x05DF
 
-> The import details are the parameter for VENDORID and PRODUCTID, this determine which chip you’re running. I think you might can extract this infromation from the datasheet of the chip. For me someone told me what parameter I have to use. Without this parameter, the compiler will produce wrong code that most likely not work on the chip.
+> make requires VENDORID and PRODUCTID to identify the device. This information can be extract from the datasheet of the chip. Without this parameter, the compiler will produce wrong code that most likely not work on the chip. 
+> In the above make command for our project got these values from somewhere (from a guy) not from the datasheet.
 
-The make command will create a the ./bootloadHID. This will be later used to flash.
+The make command will create the **bootloadHID** app. This will be later used to flash.
 
 ## Build applicaion code:
-- Now build you app source either using following commands or can use Makefile provided with this project
+- User can build app either using following commands or use Makefile provided with this project
 	- avr-gcc -g -Os -DF_CPU=12000000 -mmcu=atmega8 -c demo.c
 	- avr-gcc -g -mmcu=atmega8 -o demo.elf demo.o
 	- avr-objcopy -j .text -j .data -O ihex demo.elf demo.hex
@@ -31,7 +31,8 @@ The make command will create a the ./bootloadHID. This will be later used to fla
 Copy the bootloadHID bin created and paste it into your project folder.
 	
 If applicaion is build using above commands then use command:
-- sudo ./bootloadHID demo.hex
+- sudo ./bootloadHID <*application_hex*>
+> example: sudo ./bootloadHID demo.hex 
 
 If application is build using Makefile provided with this project then use command:
 - make program
